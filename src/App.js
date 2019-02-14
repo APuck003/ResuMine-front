@@ -1,44 +1,44 @@
 import React, { Component } from 'react';
-import { PDFExport } from '@progress/kendo-react-pdf';
 import './App.css';
+import ResumeDisplay from './ResumeDisplay'
+import ResumeForm from './formComponents/ResumeForm'
+import {BrowserRouter, Route, Switch} from 'react-router-dom'
 
 class App extends Component {
-  resume;
+
+
+  // addResumeToProfile = (resume) => {
+  //   this.setState({resumes: [{...this.state.resumes, resume}]})
+  // }
+
+  // componentDidMount(){
+  //   fetch('http://localhost:3000/resumes')
+  //   .then(res => res.json())
+  //   .then(resumes => {
+  //     this.setState({
+  //       resumes: resumes 
+  //     })
+  //   })
+  // }
   
-//   state = {
-//     users: [];
-//   }
-//
-//   componentDidMount() {
-//     fetch("rails server")
-//         .then(res => res.json())
-//         .then(users => this.setState({users: users.map(user => ({...user, exists: false}))}
-// }
-  
-  exportPDF = () => {
-    this.resume.save();
-  }
   
   render() {
+
     
     return (
-      <div className="App">
-        <div>
-          <button onClick={this.exportPDF}>Download</button>
-        </div>
-        <PDFExport paperSize={'Letter'} fileName="{user.name}.pdf" title="" subject="" keywords="" ref={(r) => this.resume = r}>
-          
-          <div style={{height: 792, width: 612, padding: 'none', backgroundColor: 'white', boxShadow: '5px 5px 5px black', margin: 'auto',
-            overflowX: 'hidden', overflowY: 'hidden'}} >user.bio</div>
-       
-          
-          
-        </PDFExport>
+      <div>
+        <BrowserRouter>
+          <Switch>
+            {/* <Route exact={true} path="/resumes" component={} */}
+            <Route path="/resumes/:id/edit" component={ResumeForm}/>
+            <Route path="/resumes/:id" component={ResumeDisplay}/>
+          </Switch>
+        </BrowserRouter>
       </div>
-    );
+    )
   }
 }
 
-// Working Branch Testing
+
 
 export default App;
