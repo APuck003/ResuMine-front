@@ -34,15 +34,6 @@ class ResumeForm extends Component {
         })
     }
 
-    // handleSubmit = (event) => {
-    //     this.setState({
-    //         personal_info: event.target.personal_info.value,
-    //         work_history: event.target.work_history.value,
-    //         education: event.target.education.value,
-    //         skills: event.target.skills.value,
-
-    //     }, () => this.addNewResume())
-    // }
 
     hasOne  = section => (value) => {
         // console.log('heyyyyyy', value)
@@ -65,7 +56,7 @@ class ResumeForm extends Component {
      }
 
      patchData = () => {
-         const { user_id, educations, personal_info, work_experience, skills } = this.state.resume
+         const { user_id, educations, personal_info, work_experiences, skills } = this.state.resume
         fetch(`http://localhost:3000/resumes/${this.props.match.params.id}`, {
             method: 'PATCH',
         
@@ -77,7 +68,7 @@ class ResumeForm extends Component {
                 user_id,
                 educations_attributes: educations,
                 personal_info_attributes: personal_info,
-                work_experiences_attributes: work_experience,
+                work_experiences_attributes: work_experiences,
                 skills_attributes: skills
             })
         })
@@ -90,6 +81,7 @@ class ResumeForm extends Component {
          console.log(this.state.resume)
         return (
             <div>
+                <h1>Create Your Resume!</h1>
                <PersonalInfoForm resume={this.state.resume.personal_info} getInfo={this.hasOne('personal_info')} />
                <WorkHistoryForm resume={this.state.resume.work_experiences[0]} getInfo={this.hasMany('work_experience')}/>
                <EducationForm resume={this.state.resume.educations[0]} getInfo={this.hasMany('educations')}/>

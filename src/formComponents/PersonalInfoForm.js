@@ -18,7 +18,7 @@ class PersonalInfoForm extends Component {
                 name: e.target.name.value,
                 email: e.target.email.value,
                 title: e.target.title.value,
-                number: e.target.number.value,
+                phone: e.target.phone.value,
                 bio: e.target.bio.value
             })}} className="k-form">
                 <fieldset>
@@ -30,15 +30,15 @@ class PersonalInfoForm extends Component {
                     </label><br></br>
                     <label className="k-form-field">
                         Title<br></br>
-                        <input name='title' className="k-textbox" placeholder="Title" />
+                        <input name='title' defaultValue={this.props.resume.title} className="k-textbox" placeholder="Title" />
                     </label><br></br>
                     <label className="k-form-field">
                         Email<br></br>
-                        <input name='email' className="k-textbox" placeholder="Email" />
+                        <input name='email' defaultValue={this.props.resume.email} className="k-textbox" placeholder="Email" />
                     </label><br></br>
                     <label className="k-form-field">
                         Phone Number<br></br>
-                        <input name='number' className="k-textbox" placeholder="Phone Number" />
+                        <input name='phone' defaultValue={this.props.resume.phone} className="k-textbox" placeholder="Phone Number" />
                     </label><br></br>
                     <label className="k-form-field">
                     Bio<br></br>
