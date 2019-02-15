@@ -1,12 +1,7 @@
 import React, { Component } from 'react';
 
-class WorkHistoryForm extends Component {
-
-    
-
-
+class AddWorkHistoryForm extends Component {
     render(){
-        
         return (
             <form onSubmit={(e) => {
                 e.preventDefault()
@@ -35,7 +30,9 @@ class WorkHistoryForm extends Component {
                     </label><br></br>
                     <label className="k-form-field">
                     Responsibilities<br></br>
-                    <textarea name='responsibilities' ref="newText" defaultValue={this.props.resume.bio}/>
+                    <textarea name='responsibilities'  className="k-textarea">
+                    Lorem Ipsum is simply dummy text.
+                    </textarea>
                     </label><br></br>
                     <button onClick={this.props.addWork} className="k-button">Add Work Experience</button>
                 <br />
@@ -46,4 +43,4 @@ class WorkHistoryForm extends Component {
     }
 }
 
-export default WorkHistoryForm;
+export default AddWorkHistoryForm;

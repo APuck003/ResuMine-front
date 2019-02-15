@@ -8,7 +8,7 @@ class SkillsForm extends Component {
                 e.preventDefault()
                 this.props.getInfo({
                     id: this.props.resume.id,
-                    skill: e.target.skill.value,
+                    description: e.target.skill.value,
         
                 })
             }}className="k-form">
@@ -17,7 +17,7 @@ class SkillsForm extends Component {
 
                     <label className="k-form-field">
                         Skill 1<br></br>
-                        <input name='skill' className="k-textbox" placeholder="Skill 1" />
+                        <input name='skill' defaultValue={this.props.resume.description} className="k-textbox" placeholder="Skill 1" />
                     </label><br></br>
                     {/* <label className="k-form-field">
                         Skill 2<br></br>
@@ -32,7 +32,9 @@ class SkillsForm extends Component {
                         <input className="k-textbox" placeholder="Skill 4" />
                     </label><br></br> */}
 
-                    <button className="k-button k-primary">Submit</button>
+                <button onClick={this.props.addSkill}className="k-button">Add Skill</button>
+                <br />
+                <button className="k-button k-primary">Submit</button>
                 </fieldset>
             </form>
         );

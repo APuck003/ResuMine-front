@@ -10,7 +10,7 @@ class EducationForm extends Component {
                 this.props.getInfo({
                     id: this.props.resume.id,
                     school: e.target.school.value,
-                    yearsAttend: e.target.yearsAttend.value,
+                    years_attended: e.target.years_attended.value,
                     major: e.target.major.value,
                     degree: e.target.degree.value
                 })
@@ -20,23 +20,25 @@ class EducationForm extends Component {
 
                     <label className="k-form-field">
                         School<br></br>
-                        <input name='school' className="k-textbox" placeholder="School" />
+                        <input name='school' defaultValue={this.props.resume.school} className="k-textbox" placeholder="School" />
                     </label><br></br>
                     <label className="k-form-field">
                         Years Attended<br></br>
-                        <input name='yearsAttend' className="k-textbox" placeholder="Years Attended" />
+                        <input name='years_attended' defaultValue={this.props.resume.years_attended} className="k-textbox" placeholder="Years Attended" />
                     </label><br></br>
                     <label className="k-form-field">
                         Major<br></br>
-                        <input name='major' className="k-textbox" placeholder="Major" />
+                        <input name='major' defaultValue={this.props.resume.major} className="k-textbox" placeholder="Major" />
                     </label><br></br>
                     <label className="k-form-field">
                     <br></br>
-                    <input name='degree' type="checkbox" id="ch1" className="k-checkbox" />
+                    <input name='degree' defaultValue={!this.props.resume.degree} type="checkbox" id="ch1" className="k-checkbox" />
                     <label className="k-checkbox-label" for="ch1">Degree</label>
 
-                    </label>
-                    <button className="k-button k-primary">Submit</button>
+                    </label><br></br>
+                    <button onClick={this.props.addEducation} className="k-button">Add Education</button>
+                <br />
+                <button className="k-button k-primary">Submit</button>
                 </fieldset>
             </form>
         );

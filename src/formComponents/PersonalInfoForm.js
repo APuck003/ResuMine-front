@@ -42,9 +42,7 @@ class PersonalInfoForm extends Component {
                     </label><br></br>
                     <label className="k-form-field">
                     Bio<br></br>
-                    <textarea name='bio' className="k-textarea">
-                    Lorem Ipsum is simply dummy text.
-                    </textarea>
+                    <textarea name='bio' ref="newText" defaultValue={this.props.resume.bio}/>
                     </label>
                     <button className="k-button k-primary">Submit</button>
                 </fieldset>
