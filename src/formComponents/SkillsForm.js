@@ -7,6 +7,7 @@ class SkillsForm extends Component {
             <form onSubmit={(e) => {
                 e.preventDefault()
                 this.props.getInfo({
+                    id: this.props.resume.id,
                     skill: e.target.skill.value,
         
                 })

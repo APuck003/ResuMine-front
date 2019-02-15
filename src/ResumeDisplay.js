@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { PDFExport } from '@progress/kendo-react-pdf'
 import ResumeForm from './formComponents/ResumeForm'
 
-class ResumeDispaly extends Component {
+class ResumeDisplay extends Component {
 
   
     exportPDF = () => {
@@ -37,4 +37,4 @@ class ResumeDispaly extends Component {
   
   
   
-  export default ResumeDispaly;
+  export default ResumeDisplay;

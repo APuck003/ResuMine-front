@@ -8,6 +8,7 @@ class EducationForm extends Component {
             <form onSubmit={(e) => {
                 e.preventDefault()
                 this.props.getInfo({
+                    id: this.props.resume.id,
                     school: e.target.school.value,
                     yearsAttend: e.target.yearsAttend.value,
                     major: e.target.major.value,

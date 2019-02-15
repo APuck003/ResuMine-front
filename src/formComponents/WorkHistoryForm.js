@@ -6,6 +6,7 @@ class WorkHistoryForm extends Component {
             <form onSubmit={(e) => {
                 e.preventDefault()
                 this.props.getInfo({
+                    id: this.props.resume.id,
                     company: e.target.company.value,
                     position: e.target.position.value,
                     years: e.target.years.value,

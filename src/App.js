@@ -6,6 +6,19 @@ import {BrowserRouter, Route, Switch} from 'react-router-dom'
 
 class App extends Component {
 
+  constructor(){
+    super()
+    this.state = {
+      fieldVal: ''
+    }
+  }
+
+  onUpdateParent = val => {
+    this.setState({
+      fieldVal: val
+    })
+  }
+
 
   // addResumeToProfile = (resume) => {
   //   this.setState({resumes: [{...this.state.resumes, resume}]})
@@ -31,7 +44,7 @@ class App extends Component {
           <Switch>
             {/* <Route exact={true} path="/resumes" component={} */}
             <Route path="/resumes/:id/edit" component={ResumeForm}/>
-            <Route path="/resumes/:id" component={ResumeDisplay}/>
+            <Route path="/resumes/:id" component={ResumeDisplay}  />
           </Switch>
         </BrowserRouter>
       </div>

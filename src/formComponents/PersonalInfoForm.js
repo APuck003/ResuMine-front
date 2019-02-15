@@ -14,6 +14,7 @@ class PersonalInfoForm extends Component {
             <form onSubmit={(e) => {
                 e.preventDefault()
                 this.props.getInfo({
+                id: this.props.resume.id,
                 name: e.target.name.value,
                 email: e.target.email.value,
                 title: e.target.title.value,
@@ -25,7 +26,7 @@ class PersonalInfoForm extends Component {
 
                     <label className="k-form-field">
                         Name<br></br>
-                        <input name='name' className="k-textbox" placeholder="Your Name" />
+                        <input name='name' defaultValue={this.props.resume.name} className="k-textbox" placeholder="Your Name" />
                     </label><br></br>
                     <label className="k-form-field">
                         Title<br></br>
